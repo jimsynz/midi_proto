@@ -4,7 +4,7 @@ defmodule MidiProto.MixProject do
   @version "0.1.0"
 
   @description """
-  Parsing and encoding of MIDI messages.
+  Parsing and encoding of MIDI messages. Bring your own transport.
   """
 
   def project do

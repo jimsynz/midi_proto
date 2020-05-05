@@ -3,16 +3,6 @@ defmodule MidiProto do
   Documentation for `MidiProto`.
   """
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> MidiProto.hello()
-      :world
-
-  """
-  def hello do
-    :world
-  end
+  @type nybble :: 0..15
+  @type seven_bit_int :: 0..127
 end
