@@ -1,13 +1,31 @@
 defmodule MidiProto.MixProject do
   use Mix.Project
 
+  @version "0.1.0"
+
+  @description """
+  Parsing and encoding of MIDI messages.
+  """
+
   def project do
     [
       app: :midi_proto,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.10",
+      package: package(),
+      description: @description,
       start_permanent: Mix.env() == :prod,
       deps: deps()
+    ]
+  end
+
+  def package do
+    [
+      maintainers: ["James Harton <james@automat.nz>"],
+      licenses: ["Hippocratic"],
+      links: %{
+        "Source" => "https://gitlab.com/jimsy/midi_proto"
+      }
     ]
   end
 
@@ -21,8 +39,9 @@ defmodule MidiProto.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      {:credo, "~> 1.1", only: [:dev, :test], runtime: false},
+      {:earmark, ">= 0.0.0", only: [:dev, :test]},
+      {:ex_doc, ">= 0.0.0", only: [:dev, :test]}
     ]
   end
 end
