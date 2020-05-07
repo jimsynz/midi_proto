@@ -1,7 +1,7 @@
 defmodule MidiProto.Message.PitchBend do
   import MidiProto.Helper.Guards
   alias __MODULE__
-  defstruct channel: 0, bend: 0
+  defstruct channel: 0, bend: 0x2000
 
   @moduledoc """
   A MIDI pitch bend message.

@@ -18,7 +18,7 @@ defmodule MidiProto.Message.ContinueTest do
         @message
         |> Message.encode()
 
-      assert <<0xFF>> = message
+      assert <<0xFB>> = message
     end
   end
 

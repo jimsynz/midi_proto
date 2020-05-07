@@ -18,7 +18,7 @@ end
 defimpl MidiProto.Message, for: MidiProto.Message.Continue do
   import MidiProto.MessagePredicateGenerator
 
-  def encode(_), do: <<0xFF>>
+  def encode(_), do: <<0xFB>>
 
   generate_predicates(continue: true, system: true, realtime: true)
 end
