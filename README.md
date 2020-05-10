@@ -1,6 +1,13 @@
 # MidiProto
 
-**TODO: Add description**
+This package allows for easy encoding and decoding of the
+[MIDI](https://www.midi.org/) protocol.
+
+It deals simply with encoding and decoding the byte protocol, and cares nothing
+about transport - allowing you to easily put it into any use case.
+
+Additionally, it supports a common subset of the
+[Firmata](https://github.com/firmata/protocol) protocol that I needed.
 
 ## Installation
 
