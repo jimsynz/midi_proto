@@ -1,6 +1,9 @@
 defprotocol MidiProto.Message do
   @moduledoc """
-  A handy protocol for working with MIDI messages.
+  Common behaviour for all MIDI message types.
+
+  Allows you to check the capabilities of a MIDI message or encode it into a
+  message for transmission.
   """
 
   @doc """
