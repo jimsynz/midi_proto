@@ -23,7 +23,7 @@ defmodule MidiProto.Message.PolyphonicPressure do
 end
 
 defimpl MidiProto.Message, for: MidiProto.Message.PolyphonicPressure do
-  import MidiProto.MessagePredicateGenerator
+  import MidiProto.Helper.MessagePredicateGenerator
 
   def encode(%{channel: channel, note_number: note_number, pressure: pressure}),
     do:

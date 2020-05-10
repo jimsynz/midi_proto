@@ -16,7 +16,7 @@ defmodule MidiProto.Message.TuneRequest do
 end
 
 defimpl MidiProto.Message, for: MidiProto.Message.TuneRequest do
-  import MidiProto.MessagePredicateGenerator
+  import MidiProto.Helper.MessagePredicateGenerator
 
   def encode(_), do: <<0xF6>>
 

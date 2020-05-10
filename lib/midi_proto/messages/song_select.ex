@@ -21,7 +21,7 @@ defmodule MidiProto.Message.SongSelect do
 end
 
 defimpl MidiProto.Message, for: MidiProto.Message.SongSelect do
-  import MidiProto.MessagePredicateGenerator
+  import MidiProto.Helper.MessagePredicateGenerator
   use Bitwise
 
   def encode(%{song: song}) do

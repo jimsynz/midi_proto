@@ -4,7 +4,7 @@ defmodule MidiProto.Message.ChannelPressure do
   defstruct channel: 0, pressure: 0
 
   @moduledoc """
-  A MIDI program change message.
+  A MIDI channel pressure message.
   """
 
   @type t :: %ChannelPressure{
@@ -22,7 +22,7 @@ defmodule MidiProto.Message.ChannelPressure do
 end
 
 defimpl MidiProto.Message, for: MidiProto.Message.ChannelPressure do
-  import MidiProto.MessagePredicateGenerator
+  import MidiProto.Helper.MessagePredicateGenerator
 
   def encode(%{channel: channel, pressure: pressure}),
     do:

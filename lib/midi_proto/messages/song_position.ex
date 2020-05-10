@@ -21,7 +21,7 @@ defmodule MidiProto.Message.SongPosition do
 end
 
 defimpl MidiProto.Message, for: MidiProto.Message.SongPosition do
-  import MidiProto.MessagePredicateGenerator
+  import MidiProto.Helper.MessagePredicateGenerator
   use Bitwise
 
   def encode(%{location: location}) do

@@ -16,7 +16,7 @@ defmodule MidiProto.Message.SystemReset do
 end
 
 defimpl MidiProto.Message, for: MidiProto.Message.SystemReset do
-  import MidiProto.MessagePredicateGenerator
+  import MidiProto.Helper.MessagePredicateGenerator
 
   def encode(_), do: <<0xFF>>
 

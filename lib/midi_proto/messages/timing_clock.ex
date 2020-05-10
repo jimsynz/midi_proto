@@ -16,7 +16,7 @@ defmodule MidiProto.Message.TimingClock do
 end
 
 defimpl MidiProto.Message, for: MidiProto.Message.TimingClock do
-  import MidiProto.MessagePredicateGenerator
+  import MidiProto.Helper.MessagePredicateGenerator
 
   def encode(_), do: <<0xF8>>
 

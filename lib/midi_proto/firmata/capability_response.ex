@@ -3,7 +3,7 @@ defmodule MidiProto.Firmata.CapabilityResponse do
   defstruct capabilities: []
 
   @moduledoc """
-  Represents a Firmata capability query implemented using a MIDI SysEx message.
+  Represents a Firmata capability response implemented using a MIDI SysEx message.
   """
 
   @type pin_mode ::
@@ -35,7 +35,7 @@ end
 defimpl MidiProto.Message, for: MidiProto.Firmata.CapabilityResponse do
   alias MidiProto.Message
   alias MidiProto.Message.SystemExclusive
-  import MidiProto.MessagePredicateGenerator
+  import MidiProto.Helper.MessagePredicateGenerator
 
   def encode(%{capabilities: capabilities}) do
     payload =

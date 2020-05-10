@@ -4,7 +4,7 @@ defmodule MidiProto.Firmata.FirmwareResponse do
   import MidiProto.Helper.Guards
 
   @moduledoc """
-  Represents a Firmata firmware query response using a MIDI SysEx message.
+  Represents a Firmata firmware response using a MIDI SysEx message.
   """
 
   @type t :: %FirmwareResponse{
@@ -26,7 +26,7 @@ end
 defimpl MidiProto.Message, for: MidiProto.Firmata.FirmwareResponse do
   alias MidiProto.Message
   alias MidiProto.Message.SystemExclusive
-  import MidiProto.MessagePredicateGenerator
+  import MidiProto.Helper.MessagePredicateGenerator
   alias MidiProto.Firmata.String
 
   def encode(%{major_version: major_version, minor_version: minor_version, name: name}) do

@@ -44,6 +44,8 @@ defmodule MidiProto.Parser do
       ...> |> Parser.parse()
       {:ok, [%MidiProto.Message.NoteOn{channel: 1, note_number: 2, velocity: 3}], %Parser{}}
 
+  You can call `append/2` and `parse/1` and number of times fill and empty the
+  buffer as required.
   """
 
   @type t :: %Parser{buffer: binary}
@@ -61,6 +63,11 @@ defmodule MidiProto.Parser do
   @doc """
   Append some new incoming data to the end of the parser buffer.
 
+  Usually you append a packet at a time, but partial packets are fine, as long
+  as they are completed before the call to `parse/1` is made.
+
+  ## Example
+
       iex> Parser.init()
       ...> |> Parser.append(<<0xff>>)
       %Parser{buffer: <<0xff>>}
@@ -70,7 +77,9 @@ defmodule MidiProto.Parser do
     do: %Parser{buffer: buffer <> new_bytes}
 
   @doc """
-  Parse the contents of the buffer.
+  Parse the contents of the buffer, returning zero or more messages.
+
+  ## Example
 
       iex> Parser.init()
       ...> |> Parser.append(<<0xff>>)
@@ -99,6 +108,9 @@ defmodule MidiProto.Parser do
         do_parse(Enum.concat(new_messages, messages), parser)
 
       :done ->
+        {:ok, Enum.reverse(messages), parser}
+
+      {:error, :no_sysex_stop_byte} ->
         {:ok, Enum.reverse(messages), parser}
 
       {:error, :invalid_packet} ->
@@ -254,7 +266,7 @@ defmodule MidiProto.Parser do
         {:ok, [SystemExclusive.init(vendor_id, payload) | messages], %{parser | buffer: buffer}}
 
       {:error, :no_sysex_stop_byte} ->
-        {:ok, [], %Parser{buffer: ""}}
+        {:error, :no_sysex_stop_byte}
     end
   end
 

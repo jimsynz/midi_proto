@@ -18,7 +18,7 @@ end
 defimpl MidiProto.Message, for: MidiProto.Firmata.FirmwareQuery do
   alias MidiProto.Message
   alias MidiProto.Message.SystemExclusive
-  import MidiProto.MessagePredicateGenerator
+  import MidiProto.Helper.MessagePredicateGenerator
 
   def encode(_),
     do:

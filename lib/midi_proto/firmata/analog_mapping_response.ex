@@ -4,7 +4,7 @@ defmodule MidiProto.Firmata.AnalogMappingResponse do
   import MidiProto.Helper.Guards
 
   @moduledoc """
-  Represents a Firmata firmware query response using a MIDI SysEx message.
+  Represents a Firmata analog mapping response using a MIDI SysEx message.
   """
 
   @type pin_mapping :: non_neg_integer() | :not_supported
@@ -21,7 +21,7 @@ end
 defimpl MidiProto.Message, for: MidiProto.Firmata.AnalogMappingResponse do
   alias MidiProto.Message
   alias MidiProto.Message.SystemExclusive
-  import MidiProto.MessagePredicateGenerator
+  import MidiProto.Helper.MessagePredicateGenerator
   import MidiProto.Helper.Guards
 
   def encode(%{pin_mappings: pin_mapping}) do

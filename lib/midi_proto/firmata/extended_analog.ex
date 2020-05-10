@@ -23,7 +23,7 @@ end
 defimpl MidiProto.Message, for: MidiProto.Firmata.ExtendedAnalog do
   alias MidiProto.Message
   alias MidiProto.Message.SystemExclusive
-  import MidiProto.MessagePredicateGenerator
+  import MidiProto.Helper.MessagePredicateGenerator
 
   def encode(%{pin: pin, bytes: bytes}),
     do:

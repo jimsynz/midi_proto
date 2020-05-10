@@ -26,7 +26,7 @@ end
 defimpl MidiProto.Message, for: MidiProto.Firmata.UserDefined do
   alias MidiProto.Message
   alias MidiProto.Message.SystemExclusive
-  import MidiProto.MessagePredicateGenerator
+  import MidiProto.Helper.MessagePredicateGenerator
 
   def encode(%{command_id: command_id, payload: bytes}) do
     command_id

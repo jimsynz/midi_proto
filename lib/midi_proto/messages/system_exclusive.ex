@@ -47,7 +47,7 @@ defmodule MidiProto.Message.SystemExclusive do
 end
 
 defimpl MidiProto.Message, for: MidiProto.Message.SystemExclusive do
-  import MidiProto.MessagePredicateGenerator
+  import MidiProto.Helper.MessagePredicateGenerator
   import MidiProto.Helper.Guards
   use Bitwise
 

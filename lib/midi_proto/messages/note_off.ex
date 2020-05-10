@@ -23,7 +23,7 @@ defmodule MidiProto.Message.NoteOff do
 end
 
 defimpl MidiProto.Message, for: MidiProto.Message.NoteOff do
-  import MidiProto.MessagePredicateGenerator
+  import MidiProto.Helper.MessagePredicateGenerator
 
   def encode(%{channel: channel, note_number: note_number, velocity: velocity}),
     do:

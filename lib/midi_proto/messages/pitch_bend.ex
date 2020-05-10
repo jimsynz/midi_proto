@@ -22,7 +22,7 @@ defmodule MidiProto.Message.PitchBend do
 end
 
 defimpl MidiProto.Message, for: MidiProto.Message.PitchBend do
-  import MidiProto.MessagePredicateGenerator
+  import MidiProto.Helper.MessagePredicateGenerator
   use Bitwise
 
   def encode(%{channel: channel, bend: bend}) do

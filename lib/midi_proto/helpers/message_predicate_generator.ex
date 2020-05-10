@@ -1,4 +1,4 @@
-defmodule MidiProto.MessagePredicateGenerator do
+defmodule MidiProto.Helper.MessagePredicateGenerator do
   @moduledoc false
 
   defmacro generate_predicates(values \\ []) do

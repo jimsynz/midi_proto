@@ -22,7 +22,7 @@ defmodule MidiProto.Message.ProgramChange do
 end
 
 defimpl MidiProto.Message, for: MidiProto.Message.ProgramChange do
-  import MidiProto.MessagePredicateGenerator
+  import MidiProto.Helper.MessagePredicateGenerator
 
   def encode(%{channel: channel, program_number: program_number}),
     do:

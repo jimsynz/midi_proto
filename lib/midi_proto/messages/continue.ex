@@ -16,7 +16,7 @@ defmodule MidiProto.Message.Continue do
 end
 
 defimpl MidiProto.Message, for: MidiProto.Message.Continue do
-  import MidiProto.MessagePredicateGenerator
+  import MidiProto.Helper.MessagePredicateGenerator
 
   def encode(_), do: <<0xFB>>
 

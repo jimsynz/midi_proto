@@ -181,6 +181,13 @@ defmodule MidiProto.ParserTest do
                |> Parser.parse()
     end
 
+    test "doesn't try and parse an incomplete sysex message" do
+      assert {:ok, [], %Parser{buffer: <<0xF0, 0x7D, 0x01, 0x02, 0x03>>}} =
+               Parser.init()
+               |> Parser.append(<<0xF0, 0x7D, 0x01, 0x02, 0x03>>)
+               |> Parser.parse()
+    end
+
     test "can parse a system reset message" do
       system_reset = SystemReset.init()
 

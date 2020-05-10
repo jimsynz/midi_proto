@@ -27,7 +27,7 @@ defmodule MidiProto.Message.ControlChange do
 end
 
 defimpl MidiProto.Message, for: MidiProto.Message.ControlChange do
-  import MidiProto.MessagePredicateGenerator
+  import MidiProto.Helper.MessagePredicateGenerator
 
   def encode(%{channel: channel, controller_number: controller_number, value: value}),
     do:

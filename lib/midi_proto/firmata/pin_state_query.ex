@@ -19,7 +19,7 @@ end
 defimpl MidiProto.Message, for: MidiProto.Firmata.PinStateQuery do
   alias MidiProto.Message
   alias MidiProto.Message.SystemExclusive
-  import MidiProto.MessagePredicateGenerator
+  import MidiProto.Helper.MessagePredicateGenerator
 
   def encode(%{pin: pin}) do
     SystemExclusive.init(0x6D, <<0::integer-size(1), pin::integer-size(7)>>)

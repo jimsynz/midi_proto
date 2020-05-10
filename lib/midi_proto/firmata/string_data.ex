@@ -19,7 +19,7 @@ defimpl MidiProto.Message, for: MidiProto.Firmata.StringData do
   alias MidiProto.Firmata.String
   alias MidiProto.Message
   alias MidiProto.Message.SystemExclusive
-  import MidiProto.MessagePredicateGenerator
+  import MidiProto.Helper.MessagePredicateGenerator
 
   def encode(%{string: string}) do
     with {:ok, encoded} <- String.encode(string),
