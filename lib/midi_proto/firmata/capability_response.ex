@@ -40,7 +40,7 @@ defimpl MidiProto.Message, for: MidiProto.Firmata.CapabilityResponse do
   def encode(%{capabilities: capabilities}) do
     payload =
       capabilities
-      |> Enum.map(fn
+      |> Stream.map(fn
         :unsupported -> <<>>
         :digital_input -> <<0x00, 0x01>>
         :digital_output -> <<0x01, 0x01>>
