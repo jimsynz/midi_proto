@@ -41,7 +41,7 @@ defmodule MidiProto.MixProject do
     [
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
       {:earmark, "~> 1.4", only: [:dev, :test]},
-      {:ex_doc, "~> 0.29", only: [:dev, :test]},
+      {:ex_doc, "~> 0.30", only: [:dev, :test]},
       {:git_ops, "~> 2.4", only: ~w[dev test]a, runtime: false}
     ]
   end
