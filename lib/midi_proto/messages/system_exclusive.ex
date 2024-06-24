@@ -1,7 +1,7 @@
 defmodule MidiProto.Message.SystemExclusive do
   alias __MODULE__
   import MidiProto.Helper.Guards
-  use Bitwise
+  import Bitwise
 
   defstruct vendor_id: nil,
             payload: <<>>
@@ -49,7 +49,7 @@ end
 defimpl MidiProto.Message, for: MidiProto.Message.SystemExclusive do
   import MidiProto.Helper.MessagePredicateGenerator
   import MidiProto.Helper.Guards
-  use Bitwise
+  import Bitwise
 
   def encode(%{vendor_id: vendor_id, payload: payload}) when is_seven_bit_int(vendor_id) do
     <<0xF0, 0::integer-size(1), vendor_id::integer-size(7), payload::binary, 0xF7>>

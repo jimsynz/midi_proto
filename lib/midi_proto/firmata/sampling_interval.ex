@@ -20,7 +20,7 @@ defimpl MidiProto.Message, for: MidiProto.Firmata.SamplingInterval do
   alias MidiProto.Message
   alias MidiProto.Message.SystemExclusive
   import MidiProto.Helper.MessagePredicateGenerator
-  use Bitwise
+  import Bitwise
 
   def encode(%{interval: interval}) do
     lsb = interval &&& 0x7F

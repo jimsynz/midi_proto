@@ -16,7 +16,7 @@ defmodule MidiProto.Firmata do
   alias MidiProto.Message
   alias MidiProto.Message.SystemExclusive
   import MidiProto.Firmata.String
-  use Bitwise
+  import Bitwise
 
   # Firmata message types
   @type t ::
@@ -39,7 +39,7 @@ defmodule MidiProto.Firmata do
   @doc """
   Given a MIDI message struct, convert it to it's equivalent Firmata message.
   """
-  @spec convert(Message.t()) :: {:ok, Firmata.t()} | {:error, reason :: any}
+  @spec convert(Message.t()) :: {:ok, t()} | {:error, reason :: any}
   def convert(%SystemExclusive{vendor_id: 0x69, payload: ""}),
     do: {:ok, AnalogMappingQuery.init()}
 

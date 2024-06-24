@@ -22,7 +22,6 @@ end
 
 defimpl MidiProto.Message, for: MidiProto.Message.SongSelect do
   import MidiProto.Helper.MessagePredicateGenerator
-  use Bitwise
 
   def encode(%{song: song}) do
     <<0xF2, 0::integer-size(1), song::integer-size(7)>>

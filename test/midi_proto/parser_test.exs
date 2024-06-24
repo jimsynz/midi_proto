@@ -24,7 +24,7 @@ defmodule MidiProto.ParserTest do
 
   use ExUnit.Case, async: true
   doctest Parser
-  use Bitwise
+  import Bitwise
 
   @marty Base.encode64("Marty")
 

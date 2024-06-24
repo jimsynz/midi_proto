@@ -24,7 +24,7 @@ defmodule MidiProto.MixProject do
       maintainers: ["James Harton <james@harton.nz>"],
       licenses: ["HL3-FULL"],
       links: %{
-        "Source" => "https://gitlab.com/jimsy/midi_proto"
+        "Source" => "https://harton.dev/james/midi_proto"
       }
     ]
   end
@@ -40,9 +40,12 @@ defmodule MidiProto.MixProject do
   defp deps do
     [
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
-      {:earmark, "~> 1.4", only: [:dev, :test]},
-      {:ex_doc, "~> 0.30", only: [:dev, :test]},
-      {:git_ops, "~> 2.4", only: ~w[dev test]a, runtime: false}
+      {:dialyxir, "~> 1.4", only: [:dev, :test], runtime: false},
+      {:doctor, "~> 0.21", only: [:dev, :test], runtime: false},
+      {:earmark, "~> 1.4", only: [:dev, :test], runtime: false},
+      {:ex_check, "~> 0.16", only: [:dev, :test], runtime: false},
+      {:ex_doc, "~> 0.30", only: [:dev, :test], runtime: false},
+      {:git_ops, "~> 2.4", only: [:dev, :test], runtime: false}
     ]
   end
 end

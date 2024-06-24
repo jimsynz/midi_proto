@@ -22,7 +22,7 @@ end
 
 defimpl MidiProto.Message, for: MidiProto.Message.SongPosition do
   import MidiProto.Helper.MessagePredicateGenerator
-  use Bitwise
+  import Bitwise
 
   def encode(%{location: location}) do
     msb = location >>> 7

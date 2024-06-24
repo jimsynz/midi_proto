@@ -5,7 +5,4 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
-## [v0.1.0](https://gitlab.com/jimsy/midi_proto/compare/v0.1.0...v0.1.0) (2021-12-08)
-
-
-
+## [v0.1.0](https://harton.dev/james/midi_proto/compare/v0.1.0...v0.1.0) (2021-12-08)

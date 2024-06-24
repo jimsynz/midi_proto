@@ -22,7 +22,7 @@ defmodule MidiProto.Parser do
     TuneRequest
   }
 
-  use Bitwise
+  import Bitwise
   defstruct buffer: <<>>
 
   @moduledoc """

@@ -38,4 +38,5 @@ defmodule MidiProto do
 
   @type nybble :: 0..15
   @type seven_bit_int :: 0..127
+  @type fourteen_bit_int :: 0..0x3FFF
 end

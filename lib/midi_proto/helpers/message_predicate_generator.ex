@@ -1,6 +1,7 @@
 defmodule MidiProto.Helper.MessagePredicateGenerator do
   @moduledoc false
 
+  @doc false
   defmacro generate_predicates(values \\ []) do
     :functions
     |> MidiProto.Message.__protocol__()

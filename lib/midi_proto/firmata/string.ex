@@ -1,5 +1,5 @@
 defmodule MidiProto.Firmata.String do
-  use Bitwise
+  import Bitwise
 
   @moduledoc """
   Handles encoding and decoding strings (and binaries) using Firmata's two-byte
