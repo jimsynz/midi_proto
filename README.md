@@ -32,8 +32,8 @@ be found at [https://hexdocs.pm/midi_proto](https://hexdocs.pm/midi_proto).
 
 ## Github Mirror
 
-This repository is mirrored [on Github](https://github.com/jimsynz/angle)
-from it's primary location [on my Forgejo instance](https://harton.dev/james/angle).
+This repository is mirrored [on Github](https://github.com/jimsynz/midi_proto)
+from it's primary location [on my Forgejo instance](https://harton.dev/james/midi_proto).
 Feel free to raise issues and open PRs on Github.
 
 ## License
