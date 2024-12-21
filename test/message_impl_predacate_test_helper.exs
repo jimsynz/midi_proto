@@ -30,6 +30,7 @@ defmodule MessageImplPredicateTestHelper do
               end
             end
           rescue
+            ArgumentError -> nil
             ExUnit.DuplicateDescribeError -> nil
           end
         end
@@ -43,6 +44,7 @@ defmodule MessageImplPredicateTestHelper do
               end
             end
           rescue
+            ArgumentError -> nil
             ExUnit.DuplicateDescribeError -> nil
           end
         end
