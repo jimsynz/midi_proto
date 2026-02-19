@@ -28,7 +28,7 @@ defmodule MidiProto.Firmata.CapabilityResponse do
   Initialise a new `CapabilityResponse` struct.
   """
   @spec init([{pin_mode, pin_resolution} | pin_mode]) :: t
-  def init(capabilities) when is_list(capabilities) and length(capabilities) > 0,
+  def init([_ | _] = capabilities),
     do: %CapabilityResponse{capabilities: capabilities}
 end
 
