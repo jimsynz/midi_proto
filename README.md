@@ -1,6 +1,5 @@
 # MidiProto
 
-[![Build Status](https://drone.harton.dev/api/badges/james/midi_proto/status.svg)](https://drone.harton.dev/james/midi_proto)
 [![Hex.pm](https://img.shields.io/hexpm/v/midi_proto.svg)](https://hex.pm/packages/midi_proto)
 [![Hippocratic License HL3-FULL](https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-FULL&labelColor=5e2751&color=bc8c3d)](https://firstdonoharm.dev/version/3/0/full.html)
 
